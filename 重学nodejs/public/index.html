@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>这是对node请求数据的简单测试</title>
+    <script src="./js/jqery.js"></script>
+</head>
+<body>
+        <div class="container">
+                <div class="btn" onclick="getText()">获取数据</div>
+                <div class="text"></div>
+            </div>
+    <script>
+    // $("body").load("http://127.0.0.1:7070")
+
+    //     // 本地如果跑不行的话，即便开服务器也不行，需要设置允许跨域访问
+    //     $.ajax({
+    //         url:"http://127.0.0.1:7070",
+    //         success:function(e){
+    //             console.log(e)
+    //         }
+    //     })
+    function getText(){
+        // $(".text").load("http:127.0.0.1:7777");
+        $.ajax({
+            url:"http://127.0.0.1:7777",
+            success:function(e){
+                console.log(JSON.parse(e))
+            }
+        })
+    }
+
+    </script>
+</body>
+</html>
